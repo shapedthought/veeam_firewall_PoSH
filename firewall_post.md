@@ -4,14 +4,6 @@
 
   `New-NetFirewallRule -DisplayName "Veeam TCP" -Direction Outbound -LocalPort 135,137-139,445,6160,2500-3300,6161,6162,49152-65535 -Protocol TCP -Action Allow`
 
-#### Add DataDomain
-
-  `New-NetFirewallRule -DisplayName "Veeam TCP DD" -Direction Outbound -LocalPort 111,2049,2052 -Protocol TCP -Action Allow`
-
-#### Add StoreOnce
-
-  `New-NetFirewallRule -DisplayName "Veeam TCP DD" -Direction Outbound -LocalPort 9387,9388 -Protocol TCP -Action Allow`
-
 ### Backup Server 
 
   `New-NetFirewallRule -DisplayName "Veeam UDP" -Direction Outbound -LocalPort 53 -Protocol UDP -Action Allow`
@@ -19,6 +11,14 @@
   `New-NetFirewallRule -DisplayName "Veeam TCP" -Direction Outbound -LocalPort 443, 10443, 433, 902, 22, 1433, 80 -Protocol UDP -Action Allow`
 
 For remote management add 3389 to TCP
+
+#### Add DataDomain
+
+  `New-NetFirewallRule -DisplayName "Veeam TCP DD" -Direction Outbound -LocalPort 111,2049,2052 -Protocol TCP -Action Allow`
+
+#### Add StoreOnce
+
+  `New-NetFirewallRule -DisplayName "Veeam TCP DD" -Direction Outbound -LocalPort 9387,9388 -Protocol TCP -Action Allow`
 
 ## Proxy Server
 
