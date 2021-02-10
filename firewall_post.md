@@ -1,8 +1,14 @@
-## Windows Server Connections - reference for other systems
+## General Windows Server Connections Outbound
 
 New-NetFirewallRule -DisplayName "Veeam UDP" -Direction Outbound -LocalPort 135,137-139,445 -Protocol UDP -Action Allow
 
 New-NetFirewallRule -DisplayName "Veeam TCP" -Direction Outbound -LocalPort 135,137-139,445,6160,2500-3300,6161,6162,49152-65535 -Protocol TCP -Action Allow
+
+## General Windows Server Connections Inbound
+
+New-NetFirewallRule -DisplayName "Veeam UDP" -Direction Inbound -LocalPort 135,137-139,445 -Protocol UDP -Action Allow
+
+New-NetFirewallRule -DisplayName "Veeam TCP" -Direction Inbound -LocalPort 135,137-139,445,6160,2500-3300,6161,6162,49152-65535 -Protocol TCP -Action Allow
 
 ### Backup Server 
 
